@@ -18,11 +18,10 @@ cd build
 
 LINUX/MAC: cmake .. -DCMAKE_PREFIX_PATH=/path/to/qt
 
-WINDOWS: cmake .. -G "MinGW Makefiles" -DCMAKE_PREFIX_PATH="C:/Qt/6.9.0/mingw_64"
-
+WINDOWS: cmake .. -G "Ninja" -DCMAKE_PREFIX_PATH="C:/Qt/6.9.0/mingw_64" -DCMAKE_MAKE_PROGRAM="C:/path/to/ninja.exe" -DCMAKE_BUILD_TYPE=Debug
 *3: Build the solution*
 
-cmake --build .
+cmake --build . --target untitled -j 6
 
 *4: Run the executable*
 
