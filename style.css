@@ -1,0 +1,25 @@
+QTextEdit {
+    border: 1px solid lightgreen;
+    /*border-radius: 8px;*/
+}
+
+#title {
+    font-size: 23pt;
+    font-weight: bold;
+    font-family: Verdana, serif;
+
+    color: lightgreen;
+}
+
+#compileBtn {
+    background-color: rgb(45, 45, 45);
+    border: 1px solid lightgreen;
+}
+
+#compileBtn:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+#compileBtn {
+    background-color: rgb(50, 50, 50);
+}
