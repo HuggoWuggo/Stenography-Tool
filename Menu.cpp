@@ -35,7 +35,7 @@ void Menu::setupTabs()
             if (action.name == "Open")
                 connect(a, &QAction::triggered, this, &Menu::openFileDialog);
             else if (action.name == "Export")
-                connect(a, &QAction::triggered, this, Menu::saveFileDialog);
+                connect(a, &QAction::triggered, this, &Menu::saveFileDialog);
         }
 
         tabButton->setMenu(m);
@@ -124,7 +124,7 @@ void Menu::openFileDialog()
 
             this->fileArea->setPixmap(scaledPixmap);
         } else {
-            std::cerr << "[ERROR] Failed to load image!" << std::endl;
+            std::cout << "[ERROR] Failed to load image!" << std::endl;
         }
     } else {
         std::cout << "[ERROR] No file selected" << std::endl;
@@ -141,7 +141,7 @@ void Menu::saveFileDialog() {
 
     if (!fileName.isEmpty()) {
         if (!fileArea || !fileArea->pixmap()) {
-            std::cerr << "[ERROR] No image to save" << std::endl;
+            std::cout << "[ERROR] No image to save" << std::endl;
             return;
         }
 
@@ -152,7 +152,7 @@ void Menu::saveFileDialog() {
 
         // Save as PNG (default) regardless of file extension
         if (const QImage image = fileArea->pixmap().toImage(); !image.save(fileName, "PNG")) {
-            std::cerr << "[ERROR] Failed to save image!" << std::endl;
+            std::cout << "[ERROR] Failed to save image!" << std::endl;
         } else {
             std::cout << "[SUCCESS] Image saved with secret message!" << std::endl;
         }
